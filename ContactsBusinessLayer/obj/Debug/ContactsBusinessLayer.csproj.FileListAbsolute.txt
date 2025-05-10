@@ -1,0 +1,9 @@
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.dll
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.pdb
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.dll
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.AssemblyReference.cache
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.CoreCompileInputs.cache
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\obj\Debug\Contacts.DFB66D76.Up2Date
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.dll
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.pdb

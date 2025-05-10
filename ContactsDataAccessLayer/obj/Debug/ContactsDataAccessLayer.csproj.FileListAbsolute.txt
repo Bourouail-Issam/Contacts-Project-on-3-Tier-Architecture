@@ -1,0 +1,6 @@
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.dll
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.AssemblyReference.cache
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.CoreCompileInputs.cache
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.dll
+B:\Programming Advice\GitHub\Contacts_Project_on_3_Tier_Architecture\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.pdb

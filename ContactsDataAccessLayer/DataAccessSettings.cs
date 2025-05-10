@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ContactsDataAccessLayer
 {
-    internal class clsDataAccessSettings
+    public class clsDataAccessSettings
     {
+        public static string stringConnection = "Server=.;Database=SecondContactsDB;User Id=sa;Password=sa123456;";
     }
 }

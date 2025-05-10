@@ -44,5 +44,11 @@
     <Compile Include="BusinessContacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContactsDataAccessLayer\ContactsDataAccessLayer.csproj">
+      <Project>{bae2745c-d3bf-4064-bc5e-ee4628a41aec}</Project>
+      <Name>ContactsDataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
