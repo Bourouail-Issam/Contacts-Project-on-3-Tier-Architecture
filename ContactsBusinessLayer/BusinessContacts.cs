@@ -6,6 +6,7 @@ namespace ContactsBusinessLayer
 {
     public class clsContact
     {
+        private enum _enMode { Empty =0,AddNew = 1, Update=2 };
         public int ID { get; set; }
         public string FirstName{ get; set; }
         public string LastName { get; set; }
@@ -16,6 +17,7 @@ namespace ContactsBusinessLayer
         public int CountryID { get; set; }
         public string ImagePath { get; set; }
 
+        private _enMode _Mode;
         public clsContact() 
         {
             this.ID = -1;
@@ -27,9 +29,12 @@ namespace ContactsBusinessLayer
             this.DateOfBirth = DateTime.Now;
             this.CountryID = -1;
             this.ImagePath = "";
+
+            _Mode = _enMode.AddNew;
         }
          private clsContact(int ID, string FirstName, string LastName, string Email,
-          string Phone, string Address, DateTime DateOfBirth, int CountryID, string ImagePath)
+                                 string Phone, string Address, DateTime DateOfBirth, 
+                                 int CountryID, string ImagePath)
         {
             this.ID = ID;
             this.FirstName = FirstName;
@@ -41,6 +46,7 @@ namespace ContactsBusinessLayer
             this.CountryID = CountryID;
             this.ImagePath = ImagePath;
 
+            _Mode = _enMode.Update;
         }
         static public clsContact Find(int ContactID)
         {
@@ -63,6 +69,28 @@ namespace ContactsBusinessLayer
                     ImagePath);
             }
             return null;
+        }
+
+        private bool _AddNewContact()
+        {
+            this.ID = clsContactDataAccess.AddNewContact(this.FirstName,this.LastName,this.Email, this.Phone,
+                this.Address, this.DateOfBirth, this.CountryID, this.ImagePath);
+            return (this.ID != -1);
+        }
+        public bool Save()
+        {
+            switch(_Mode)
+            {
+                case _enMode.AddNew:
+                    if (_AddNewContact())
+                    {
+                        _Mode = _enMode.Empty;
+                        return true;                        
+                    };
+                    return  false;
+
+            }
+            return false;
         }
     }
 }

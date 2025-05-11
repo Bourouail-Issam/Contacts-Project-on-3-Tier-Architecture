@@ -45,5 +45,49 @@ namespace ContactsDataAccessLayer
             }
             return isFound;
         }
+
+        static public int AddNewContact(string FirstName,string LastName, string Email,string Phone, 
+                                  string Address, DateTime DateOfBirth,int CountryID, string ImagePath)
+        {
+            int ContactID = -1;
+
+            SqlConnection conn = new SqlConnection(clsDataAccessSettings.stringConnection);
+            string query = @"insert into Contacts (FirstName,LastName,Email,Phone,Address,DateOfBirth,CountryID,ImagePath)
+                                 values (@FirstName,@LastName,@Email,@Phone,@Address,@DateOfBirth,@CountryID,@ImagePath)
+                                 select scope_identity()";
+            
+            SqlCommand cmd  = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@FirstName", FirstName);
+            cmd.Parameters.AddWithValue("@LastName", LastName);
+            cmd.Parameters.AddWithValue("@Email", Email);
+            cmd.Parameters.AddWithValue("@Phone", Phone);
+            cmd.Parameters.AddWithValue("@Address", Address);
+            cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+            cmd.Parameters.AddWithValue("@CountryID", CountryID);
+
+            if (ImagePath != "")
+                cmd.Parameters.AddWithValue("@ImagePath", ImagePath);
+            else
+                cmd.Parameters.AddWithValue("@ImagePath", System.DBNull.Value);
+
+            try
+            {
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int ID))
+                    ContactID = ID;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                ContactID = -1;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return ContactID;
+        }
     }
 }

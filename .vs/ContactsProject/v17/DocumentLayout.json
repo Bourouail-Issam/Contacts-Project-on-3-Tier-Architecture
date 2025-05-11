@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\contactsdataaccesslayer\\dataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|solutionrelative:contactsdataaccesslayer\\dataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\contactsdataaccesslayer\\contactdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|solutionrelative:contactsdataaccesslayer\\contactdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|b:\\programming advice\\github\\contacts_project_on_3_tier_architecture\\contactsdataaccesslayer\\contactdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|solutionrelative:contactsdataaccesslayer\\contactdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1148A39-C8F0-4D30-ABF8-8E2E674290B3}|ContactsBusinessLayer\\ContactsBusinessLayer.csproj|b:\\programming advice\\github\\contacts_project_on_3_tier_architecture\\contactsbusinesslayer\\businesscontacts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1148A39-C8F0-4D30-ABF8-8E2E674290B3}|ContactsBusinessLayer\\ContactsBusinessLayer.csproj|solutionrelative:contactsbusinesslayer\\businesscontacts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C98D27F-84DC-40BF-BF26-5391BC8DB1D2}|ContactsProject\\ContactsConsolApp-PresentationLayer.csproj|b:\\programming advice\\github\\contacts_project_on_3_tier_architecture\\contactsproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C98D27F-84DC-40BF-BF26-5391BC8DB1D2}|ContactsProject\\ContactsConsolApp-PresentationLayer.csproj|solutionrelative:contactsproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1148A39-C8F0-4D30-ABF8-8E2E674290B3}|ContactsBusinessLayer\\ContactsBusinessLayer.csproj|b:\\programming advice\\github\\contacts_project_on_3_tier_architecture\\contactsbusinesslayer\\businesscontacts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1148A39-C8F0-4D30-ABF8-8E2E674290B3}|ContactsBusinessLayer\\ContactsBusinessLayer.csproj|solutionrelative:contactsbusinesslayer\\businesscontacts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|b:\\programming advice\\github\\contacts_project_on_3_tier_architecture\\contactsdataaccesslayer\\dataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAE2745C-D3BF-4064-BC5E-EE4628A41AEC}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|solutionrelative:contactsdataaccesslayer\\dataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +25,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 221,
+          "DockedWidth": 185,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "ContactsProject\\Program.cs",
               "ToolTip": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsProject\\Program.cs",
               "RelativeToolTip": "ContactsProject\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T06:44:26.753Z",
               "EditorCaption": ""
@@ -44,18 +44,18 @@
           ]
         },
         {
-          "DockedWidth": 166,
+          "DockedWidth": 171,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "BusinessContacts.cs",
               "DocumentMoniker": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsBusinessLayer\\BusinessContacts.cs",
               "RelativeDocumentMoniker": "ContactsBusinessLayer\\BusinessContacts.cs",
               "ToolTip": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsBusinessLayer\\BusinessContacts.cs",
               "RelativeToolTip": "ContactsBusinessLayer\\BusinessContacts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T06:45:00.082Z",
               "EditorCaption": ""
@@ -63,12 +63,25 @@
           ]
         },
         {
-          "DockedWidth": 214,
+          "DockedWidth": 245,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ContactData.cs",
+              "DocumentMoniker": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsDataAccessLayer\\ContactData.cs",
+              "RelativeDocumentMoniker": "ContactsDataAccessLayer\\ContactData.cs",
+              "ToolTip": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsDataAccessLayer\\ContactData.cs",
+              "RelativeToolTip": "ContactsDataAccessLayer\\ContactData.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T06:23:03.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DataAccessSettings.cs",
               "DocumentMoniker": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsDataAccessLayer\\DataAccessSettings.cs",
               "RelativeDocumentMoniker": "ContactsDataAccessLayer\\DataAccessSettings.cs",
@@ -77,19 +90,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T07:19:27.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ContactData.cs",
-              "DocumentMoniker": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsDataAccessLayer\\ContactData.cs",
-              "RelativeDocumentMoniker": "ContactsDataAccessLayer\\ContactData.cs",
-              "ToolTip": "B:\\Programming Advice\\GitHub\\Contacts_Project_on_3_Tier_Architecture\\ContactsDataAccessLayer\\ContactData.cs",
-              "RelativeToolTip": "ContactsDataAccessLayer\\ContactData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T06:23:03.142Z",
               "EditorCaption": ""
             }
           ]
