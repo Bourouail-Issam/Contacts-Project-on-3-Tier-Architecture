@@ -82,6 +82,15 @@ namespace ContactsBusinessLayer
             return clsContactDataAccess.UpdateContact(this.ID,this.FirstName, this.LastName, this.Email, this.Phone,
                 this.Address, this.DateOfBirth, this.CountryID, this.ImagePath);
         }
+        static public bool IsContactExist(int contactID)
+        {
+            return clsContactDataAccess.ExistContact(contactID);
+        }
+
+        static public bool DeleteContact(int contactID)
+        {
+            return clsContactDataAccess.DeleteContactWithID(contactID);
+        }
         public bool Save()
         {
             switch(_Mode)

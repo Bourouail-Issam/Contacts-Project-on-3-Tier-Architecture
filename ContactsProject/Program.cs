@@ -113,7 +113,6 @@ namespace ContactsProject
                 Console.WriteLine("Adding New Contact is Failed");
             }
         }
-
         static void TestUpdateContact(int contactID)
         {
             clsContact contact = clsContact.Find(contactID);
@@ -149,6 +148,42 @@ namespace ContactsProject
                 Console.WriteLine($"contact with ID = {contactID} Not Found");
 
         }
+        static void TestIsExistContact(int contactID)
+        {
+            if (clsContact.IsContactExist(contactID))
+                Console.WriteLine("Yes , contact is there");
+            else
+                Console.WriteLine("No, Contact Is Not there");
+        }
+        static void TestDeleteContact(int ContactID)
+        {
+            Console.Write("Do you wanat Delete This Enter 1 if yes , 2 if No : ");
+            short isDeleted = 0;
+            while (true)
+            {
+                if (short.TryParse(Console.ReadLine(), out short number))
+                {
+                    if (number == 1 || number == 2)
+                    {
+                        isDeleted = number;
+                        break;
+                    }
+                }
+                Console.Write(@"We do no Accept any value other than (1,2) Please Enter 1 if yes , 2 if No : ");
+            }
+            if (isDeleted == 1)
+            {
+                if (clsContact.IsContactExist(ContactID))
+                {
+                    if (clsContact.DeleteContact(ContactID))
+                        Console.WriteLine("Deleting Contact successfullt ");
+                    else
+                        Console.WriteLine("Deletingh Contact is Failed ");
+                }
+                else
+                    Console.WriteLine($"The Contact with ID = {ContactID} is Not Found");
+            }
+        }
         static void Main(string[] args)
         {
             //for (int i = 1; i < 13; i++)
@@ -160,7 +195,12 @@ namespace ContactsProject
 
             //TestAddNewContact();
             //TestUpdateContact(15);
-            TestUpdateContact(25);
-        }    
+            //TestUpdateContact(25);
+            TestIsExistContact(15);
+            TestIsExistContact(25);
+            TestDeleteContact(15);
+            TestDeleteContact(25);
+        }   
+        
     }
 }

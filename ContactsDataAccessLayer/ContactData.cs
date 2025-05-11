@@ -143,5 +143,65 @@ namespace ContactsDataAccessLayer
 
             return isUpdated;
         }
+        static public bool ExistContact(int ID)
+        {
+            bool isFound = false;
+            SqlConnection conn = new SqlConnection(clsDataAccessSettings.stringConnection);
+            string query = "select Found=1 from Contacts where ContactID=@ID";
+
+            SqlCommand cmd = new SqlCommand(query,conn);
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader result = cmd.ExecuteReader();
+
+                isFound = result.HasRows;
+                result.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                isFound= false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isFound;
+        }
+
+        static public bool DeleteContactWithID(int ID)
+        {
+            bool isDeleted = false;
+            SqlConnection conn = new SqlConnection(clsDataAccessSettings.stringConnection);
+            string query = "delete from Contacts where ContactID=@ID";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+            try
+            {
+                conn.Open();
+                int isAffected = cmd.ExecuteNonQuery();
+
+                if (isAffected > 0)
+                    isDeleted = true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                isDeleted = false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isDeleted;
+        }
     }
 }
