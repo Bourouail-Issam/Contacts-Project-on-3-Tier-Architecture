@@ -77,6 +77,11 @@ namespace ContactsBusinessLayer
                 this.Address, this.DateOfBirth, this.CountryID, this.ImagePath);
             return (this.ID != -1);
         }
+        private bool _UpdateContact()
+        {
+            return clsContactDataAccess.UpdateContact(this.ID,this.FirstName, this.LastName, this.Email, this.Phone,
+                this.Address, this.DateOfBirth, this.CountryID, this.ImagePath);
+        }
         public bool Save()
         {
             switch(_Mode)
@@ -88,6 +93,14 @@ namespace ContactsBusinessLayer
                         return true;                        
                     };
                     return  false;
+                case _enMode.Update:
+
+                    if (_UpdateContact())
+                    {
+                        _Mode = _enMode.Empty;
+                        return true;
+                    }
+                    return false;
 
             }
             return false;

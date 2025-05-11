@@ -113,6 +113,42 @@ namespace ContactsProject
                 Console.WriteLine("Adding New Contact is Failed");
             }
         }
+
+        static void TestUpdateContact(int contactID)
+        {
+            clsContact contact = clsContact.Find(contactID);
+            if (contact != null)
+            {
+                PrintContactInfo(contact);
+                
+                Console.Write("Do you wanat Update This Enter 1 if yes , 2 if No : ");
+                short isUpdate = 0;
+                while(true)
+                {
+                    if(short.TryParse(Console.ReadLine(), out short number))
+                    {
+                        if (number == 1 || number ==2)
+                        {
+                           isUpdate = number;
+                           break;
+                        }
+                    }
+                    Console.Write(@"We do no Accept any value other than (1,2) Please Enter 1 if yes , 2 if No : ");
+                }
+
+                if(isUpdate == 1)
+                {
+                    ReadContact(ref contact);
+                    if(contact.Save())
+                        Console.WriteLine($"Updating Contact is successfullt");
+                    else
+                        Console.WriteLine($"Updating Contact is Failed");
+                }
+            }
+            else
+                Console.WriteLine($"contact with ID = {contactID} Not Found");
+
+        }
         static void Main(string[] args)
         {
             //for (int i = 1; i < 13; i++)
@@ -122,8 +158,9 @@ namespace ContactsProject
             //    Console.WriteLine("");
             //}
 
-            TestAddNewContact();
-
+            //TestAddNewContact();
+            //TestUpdateContact(15);
+            TestUpdateContact(25);
         }    
     }
 }

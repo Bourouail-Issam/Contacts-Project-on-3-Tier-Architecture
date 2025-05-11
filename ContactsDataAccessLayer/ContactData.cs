@@ -89,5 +89,59 @@ namespace ContactsDataAccessLayer
             }
             return ContactID;
         }
+    
+        static public bool UpdateContact(int ID, string FirstName, string LastName, string Email, string Phone,
+                                  string Address, DateTime DateOfBirth, int CountryID, string ImagePath)
+        {
+            bool isUpdated = false;
+            SqlConnection conn = new SqlConnection(clsDataAccessSettings.stringConnection);
+            string query = @"update Contacts
+                            set FirstName=@FirstName,
+                                LastName=@LastName,
+                                Email=@Email,
+                                Phone=@Phone,
+                                Address=@Address,
+                                DateOfBirth=@DateOfBirth,
+                                CountryID=@CountryID,
+                                ImagePath=@ImagePath
+                            where ContactID=@ID";
+
+            SqlCommand cmd = new SqlCommand(query,conn);
+
+            cmd.Parameters.AddWithValue("@FirstName", FirstName);
+            cmd.Parameters.AddWithValue("@LastName", LastName);
+            cmd.Parameters.AddWithValue("@Email", Email);
+            cmd.Parameters.AddWithValue("@Phone", Phone);
+            cmd.Parameters.AddWithValue("@Address", Address);
+            cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+            cmd.Parameters.AddWithValue("@CountryID", CountryID);
+            if (ImagePath != "")
+                cmd.Parameters.AddWithValue("@ImagePath", ImagePath);
+            else
+                cmd.Parameters.AddWithValue("@ImagePath", DBNull.Value);
+
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+
+            try
+            {
+                conn.Open();
+                int RowsAffected = cmd.ExecuteNonQuery();
+
+                if (RowsAffected > 0)
+                    isUpdated = true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);   
+                isUpdated = false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return isUpdated;
+        }
     }
 }
