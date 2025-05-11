@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient; 
 
 namespace ContactsDataAccessLayer
@@ -173,10 +174,9 @@ namespace ContactsDataAccessLayer
 
             return isFound;
         }
-
         static public bool DeleteContactWithID(int ID)
         {
-            bool isDeleted = false;
+            int RowsAffected = 0;
             SqlConnection conn = new SqlConnection(clsDataAccessSettings.stringConnection);
             string query = "delete from Contacts where ContactID=@ID";
 
@@ -186,22 +186,48 @@ namespace ContactsDataAccessLayer
             try
             {
                 conn.Open();
-                int isAffected = cmd.ExecuteNonQuery();
-
-                if (isAffected > 0)
-                    isDeleted = true;
+                 RowsAffected = cmd.ExecuteNonQuery();
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                isDeleted = false;
+                RowsAffected = 0;
             }
             finally
             {
                 conn.Close();
             }
-            return isDeleted;
+            return (RowsAffected>0);
+        }
+
+        static public DataTable GetAllContacts()
+        {
+            DataTable dt = new DataTable();
+            bool isFound = false;
+            SqlConnection conn = new SqlConnection(clsDataAccessSettings.stringConnection);
+            string query = "select * from Contacts";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader result = cmd.ExecuteReader();
+
+                if (result.HasRows)
+                    dt.Load(result);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
         }
     }
 }

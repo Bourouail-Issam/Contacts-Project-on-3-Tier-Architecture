@@ -1,5 +1,8 @@
 ﻿using System;
-
+using System.Data;
+using System.Net;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security.Policy;
 using ContactsBusinessLayer;
 
 namespace ContactsProject
@@ -184,6 +187,35 @@ namespace ContactsProject
                     Console.WriteLine($"The Contact with ID = {ContactID} is Not Found");
             }
         }
+
+        static void TestGetAllContacts()
+        {
+            DataTable contacts = clsContact.GetAllContacts();
+
+            if (contacts != null)
+            {
+                Console.WriteLine("{0,-10} | {1,-10} | {2,-12} | {3,-25} | {4,-15} | {5,-25} | {6,-25} | {7,-10} | {8,-30}",
+                    "ContactID","FirstName", "LastName", "Email", "Phone", "Address", "DateOfBirth", "CountryID", "ImagePath");
+                foreach (DataRow row in contacts.Rows)
+                {
+                    Console.WriteLine("{0,-10} | {1,-10} | {2,-12} | {3,-25} | {4,-15} | {5,-25:yyyy-mm-dd} | {6,-25} | {7,-10} | {8,-30}",
+                                       row["ContactID"]?.ToString() ?? "N/A",
+                                       row["FirstName"]?.ToString() ?? "N/A",
+                                       row["LastName"]?.ToString() ?? "N/A",
+                                       row["Email"]?.ToString() ?? "N/A",
+                                       row["Phone"]?.ToString() ?? "N/A",
+                                       row["Address"]?.ToString() ?? "N/A",
+                                       row["DateOfBirth"] != DBNull.Value ? Convert.ToDateTime(row["DateOfBirth"]).ToString("yyyy,mm,dd"): "N/A",
+                                       row["CountryID"]?.ToString() ?? "N/A",
+                                       (row["ImagePath"] != DBNull.Value) && (!string.IsNullOrWhiteSpace(row["ImagePath"].ToString()))
+                                       ? row["ImagePath"].ToString()
+                                       :"N/A"
+                                       );
+                }
+            }
+            else
+                Console.WriteLine("Empty Contacts");
+        }
         static void Main(string[] args)
         {
             //for (int i = 1; i < 13; i++)
@@ -196,10 +228,11 @@ namespace ContactsProject
             //TestAddNewContact();
             //TestUpdateContact(15);
             //TestUpdateContact(25);
-            TestIsExistContact(15);
-            TestIsExistContact(25);
-            TestDeleteContact(15);
-            TestDeleteContact(25);
+            //TestIsExistContact(15);
+            //TestIsExistContact(25);
+            //TestDeleteContact(15);
+            //TestDeleteContact(25);
+            TestGetAllContacts();
         }   
         
     }
